@@ -55,7 +55,16 @@
       <p>Madingley Technologies</p>
       <p>June 19, 2024</p>
       <hr>
-      <p>We are the proud developers of <a href="https://play.google.com">e-Kofini</a> and e-Kalathi (TBA).</p>
-      <p>Get in touch for a friendly discussion at <a href="mailto:info@madingleytechnologies.com">info@madingleytechnologies.com</a>.</p>
+      <p>We are the proud developers of <a href="https://ekofini.madingleytechnologies.com">e-Kofini</a> and e-Kalathi (TBA).</p>
+      <p>Get in touch for a friendly discussion at <span id="email"></span></p>
+
+      <script type="text/javascript">
+	var info = "info";
+	var dom = "madingleytechnologies";
+	var ext = "com";
+	var email = info + "@" + dom + "." + ext;
+	document.getElementById("email").innerHTML = '<a href="mailto:' + email + '">' + email + '</a>.';
+      </script>
+
   </body>
 </html>
