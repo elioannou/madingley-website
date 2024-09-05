@@ -72,12 +72,14 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: clamp(1rem, 5vw, 1.8rem);
+            white-space: nowrap;
             font-weight: bold;
             color: var(--primary-color);
             text-decoration: none;
             display: flex;
             align-items: center;
+	    margin-right: 30px;
         }
         
         .logo-icon {
@@ -88,6 +90,7 @@
         .nav-links {
             display: flex;
             gap: 1.5rem;
+	    white-space: nowrap;
         }
         
         .nav-links a {
@@ -504,14 +507,14 @@
         }
 
 	#thankYouMessage {
-	display: none;
-	text-align: center;
-	background-color:#ccdfe0;
-	color:  #007682;
-	max-width: 600px;
-	padding: 50px;
-	margin: 20px auto;
-	border-radius: 30px;
+	    display: none;
+	    text-align: center;
+	    background-color:#ccdfe0;
+	    color:  #007682;
+	    max-width: 600px;
+	    padding: 50px;
+	    margin: 20px auto;
+	    border-radius: 30px;
 	}
 
     </style>
@@ -521,7 +524,7 @@
     <header id="header">
         <div class="container">
             <nav>
-                <a href="#" class="logo"><i class="fas fa-mobile-alt logo-icon"></i>Madingley Technologies</a>
+                <a href="#" class="logo"><i class="fas fa-mobile-alt logo-icon"></i>Mad. Tech.</a>
                 <div class="nav-links">
                     <a href="#home">Home</a>
                     <a href="#features">Features</a>
