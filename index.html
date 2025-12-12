@@ -1,780 +1,2770 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Madingley Technologies - Innovative Mobile Apps</title>
-    <meta name="description" content="Innovative mobile apps for powering a modern lifestyle">
-    <link rel="canonical" href="https://madingleytechnologies.com">
+    <meta
+      name="description"
+      content="Innovative mobile apps for powering a modern lifestyle"
+    />
+    <link rel="canonical" href="https://madingleytechnologies.com" />
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://madingleytechnologies.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Madingley Technologies">
-    <meta property="og:description"
-          content="Innovative mobile apps for powering a modern lifestyle">
-    <meta property="og:image" content="madingley-sign.jpg">
-    
+    <meta property="og:url" content="https://madingleytechnologies.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Madingley Technologies" />
+    <meta
+      property="og:description"
+      content="Innovative mobile apps for powering a modern lifestyle"
+    />
+    <meta property="og:image" content="madingley-sign.jpg" />
+
     <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@madingleytech">
-    <meta property="twitter:domain" content="madingleytech">
-    <meta property="twitter:url" content="https://madingleytechnologies.com">
-    <meta name="twitter:title" content="Madingley Technologies">
-    <meta name="twitter:description"
-          content="Innovative mobile apps for powering a modern lifestyle">
-    <meta name="twitter:image" content="madingley-sign.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@madingleytech" />
+    <meta property="twitter:domain" content="madingleytech" />
+    <meta property="twitter:url" content="https://madingleytechnologies.com" />
+    <meta name="twitter:title" content="Madingley Technologies" />
+    <meta
+      name="twitter:description"
+      content="Innovative mobile apps for powering a modern lifestyle"
+    />
+    <meta name="twitter:image" content="madingley-sign.jpg" />
+
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <style>
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #4d64b5;
-            --accent-color: #e74c3c;
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --light-gray: #e0e0e0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            font-size: clamp(1rem, 5vw, 1.8rem);
-            white-space: nowrap;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-	    margin-right: 30px;
-        }
-        
-        .logo-icon {
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-	    white-space: nowrap;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url('bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-            padding: 150px 0;
-            margin-top: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease-out 0.5s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 1rem 2rem;
-            margin-top: 1.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: fadeInUp 1s ease-out 1s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .cta-button:hover {
-            background-color: #152d82;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        
-        .features {
-            padding: 6rem 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        
-        .feature-item {
-            text-align: center;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-item:hover .feature-icon {
-            transform: scale(1.2);
-            color: var(--secondary-color);
-        }
-        
-        .feature-item h3 {
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        .apps {
-            background-color: var(--light-gray);
-            padding: 6rem 0;
-        }
-        
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        
-        .app-item {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all e0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .app-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-	.app-item:visited {
-            color: inherit;
-        }
-        
-        .app-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .app-content {
-            padding: 1.5rem;
-        }
-        
-        .app-content h3 {
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        
-        .testimonials {
-            background-color: white;
-            padding: 6rem 0;
-        }
-        
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .testimonial-item {
-            display: none;
-        }
-        
-        .testimonial-item.active {
-            display: block;
-        }
-        
-        .testimonial-content {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-        }
-        
-        .slider-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        .slider-nav button {
-            background-color: var(--light-gray);
-            border: none;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .slider-nav button.active {
-            background-color: var(--primary-color);
-        }
-        
-        .contact {
-            padding: 6rem 0;
-            background-color: var(--bg-color);
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--light-gray);
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        .form-group textarea {
-            height: 150px;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: block;
-            width: 100%;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .submit-btn:hover {
-            background-color: #3570b8;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-        }
-        
-        footer a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        footer a:hover {
-            color: #152d82;
-        }
-        
-        .social-links {
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .feature-grid,
-            .app-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+      :root {
+        --primary-color: #6366f1;
+        --primary-dark: #4f46e5;
+        --primary-light: #818cf8;
+        --secondary-color: #8b5cf6;
+        --accent-color: #f472b6;
+        --accent-secondary: #22d3ee;
+        --accent-green: #10b981;
+        --bg-color: #030014;
+        --bg-secondary: #0a0a1f;
+        --bg-tertiary: #111132;
+        --text-color: #f1f5f9;
+        --text-muted: #94a3b8;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --gradient-primary: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f472b6 100%
+        );
+        --gradient-accent: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%);
+        --gradient-glow: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.4) 0%,
+          rgba(139, 92, 246, 0.4) 100%
+        );
+        --gradient-mesh: radial-gradient(
+            at 40% 20%,
+            hsla(240, 100%, 74%, 0.3) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 80% 0%,
+            hsla(280, 96%, 64%, 0.3) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 0% 50%,
+            hsla(343, 100%, 76%, 0.2) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 80% 50%,
+            hsla(189, 100%, 56%, 0.2) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 0% 100%,
+            hsla(240, 100%, 70%, 0.3) 0px,
+            transparent 50%
+          );
+        --shadow-glow: 0 0 80px rgba(99, 102, 241, 0.4);
+        --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      }
 
- 	.price-comparison {
-            background-color: var(--bg-color);
-            padding: 6rem 0;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Selection styling */
+      ::selection {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.7;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        overflow-x: hidden;
+      }
+
+      /* Mesh Gradient Background */
+      .mesh-gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-mesh);
+        z-index: -2;
+        opacity: 0.6;
+      }
+
+      /* Animated Grain Texture */
+      .grain {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        opacity: 0.03;
+        z-index: -1;
+        pointer-events: none;
+        animation: grain 8s steps(10) infinite;
+      }
+
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
         }
-        
+        10% {
+          transform: translate(-5%, -10%);
+        }
+        20% {
+          transform: translate(-15%, 5%);
+        }
+        30% {
+          transform: translate(7%, -25%);
+        }
+        40% {
+          transform: translate(-5%, 25%);
+        }
+        50% {
+          transform: translate(-15%, 10%);
+        }
+        60% {
+          transform: translate(15%, 0%);
+        }
+        70% {
+          transform: translate(0%, 15%);
+        }
+        80% {
+          transform: translate(3%, 35%);
+        }
+        90% {
+          transform: translate(-10%, 10%);
+        }
+      }
+
+      /* Gradient Orbs Background */
+      .gradient-orbs {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.5;
+        animation: float 20s ease-in-out infinite;
+      }
+
+      .orb-1 {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(99, 102, 241, 0.4) 0%,
+          transparent 70%
+        );
+        top: -200px;
+        left: -200px;
+        animation-delay: 0s;
+      }
+
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.3) 0%,
+          transparent 70%
+        );
+        top: 50%;
+        right: -150px;
+        animation-delay: -5s;
+      }
+
+      .orb-3 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(244, 114, 182, 0.3) 0%,
+          transparent 70%
+        );
+        bottom: -100px;
+        left: 30%;
+        animation-delay: -10s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(50px, 50px) rotate(5deg);
+        }
+        50% {
+          transform: translate(0, 100px) rotate(0deg);
+        }
+        75% {
+          transform: translate(-50px, 50px) rotate(-5deg);
+        }
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Glass Morphism Header */
+      header {
+        background: rgba(15, 15, 26, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      header.scrolled {
+        background: rgba(15, 15, 26, 0.95);
+        box-shadow: var(--shadow-glow);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.1rem, 4vw, 1.6rem);
+        font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        font-size: 1.8rem;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        padding: 8px 0;
+      }
+
+      .nav-links a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text-color);
+      }
+
+      .nav-links a:hover::before {
+        width: 100%;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1001;
+        background: none;
+        border: none;
+        padding: 5px;
+      }
+
+      .mobile-menu-btn span {
+        width: 28px;
+        height: 2px;
+        background: var(--text-color);
+        transition: all 0.3s ease;
+        display: block;
+      }
+
+      .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0 80px;
+      }
+
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      .hero-grid {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background-image: linear-gradient(
+            rgba(99, 102, 241, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        transform: perspective(500px) rotateX(60deg);
+        animation: gridMove 20s linear infinite;
+      }
+
+      @keyframes gridMove {
+        0% {
+          transform: perspective(500px) rotateX(60deg) translateY(0);
+        }
+        100% {
+          transform: perspective(500px) rotateX(60deg) translateY(60px);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        color: var(--primary-light);
+        margin-bottom: 2rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-badge i {
+        animation: sparkle 2s ease-in-out infinite;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .hero h1 .gradient-text {
+        background: linear-gradient(
+          90deg,
+          #667eea,
+          #764ba2,
+          #f472b6,
+          #22d3ee,
+          #667eea
+        );
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 6s ease-in-out infinite;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .typed-cursor {
+        color: var(--primary-color);
+      }
+
+      .hero p {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        max-width: 650px;
+        margin: 0 auto 2.5rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--gradient-primary);
+        color: white;
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        border-radius: 60px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        border: none;
+        cursor: pointer;
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .cta-button:hover::before {
+        left: 100%;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+      }
+
+      .cta-button-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--text-color);
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        border-radius: 60px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-weight: 600;
+        font-size: 1rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .cta-button-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--primary-color);
+        transform: translateY(-4px);
+      }
+
+      /* Section Styling */
+      section {
+        position: relative;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        color: var(--primary-light);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          135deg,
+          var(--text-color) 0%,
+          var(--text-muted) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Features Section */
+      .features {
+        padding: 8rem 0;
+        background: var(--bg-secondary);
+        position: relative;
+      }
+
+      .features::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--glass-border),
+          transparent
+        );
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-item {
+        text-align: left;
+        padding: 2.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--gradient-glow);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 0;
+      }
+
+      .feature-item:hover::before {
+        opacity: 0.1;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .feature-item > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Radial glow effect on hover */
+      .feature-item::after {
+        content: "";
+        position: absolute;
+        top: var(--mouse-y, 50%);
+        left: var(--mouse-x, 50%);
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(99, 102, 241, 0.15) 0%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+      }
+
+      .feature-item:hover::after {
+        opacity: 1;
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-primary);
+        border-radius: 20px;
+        font-size: 1.8rem;
+        color: white;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover .feature-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .feature-item h3 {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .feature-item p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* Apps Section */
+      .apps {
+        background: var(--bg-color);
+        padding: 8rem 0;
+        position: relative;
+      }
+
+      .app-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .app-item {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .app-item:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .app-item:visited {
+        color: inherit;
+      }
+
+      .app-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .app-item:hover .app-image {
+        transform: scale(1.05);
+      }
+
+      .app-image-wrapper {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .app-image-wrapper::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(transparent, var(--bg-color));
+        pointer-events: none;
+      }
+
+      .app-content {
+        padding: 2rem;
+      }
+
+      .app-tag {
+        display: inline-block;
+        padding: 6px 14px;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 50px;
+        font-size: 0.75rem;
+        color: var(--primary-light);
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      .app-content h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .app-content p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* Price Comparison Section */
+      .price-comparison {
+        background: var(--bg-secondary);
+        padding: 8rem 0;
+      }
+
+      .comparison-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      .comparison-image {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 30px;
+        overflow: hidden;
+        padding: 20px;
+        position: relative;
+      }
+
+      .comparison-image::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          transparent,
+          var(--primary-color),
+          transparent 30%
+        );
+        animation: borderRotate 4s linear infinite;
+        z-index: -1;
+      }
+
+      @keyframes borderRotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .comparison-image img {
+        width: 100%;
+        border-radius: 20px;
+        display: block;
+      }
+
+      .comparison-content h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+      }
+
+      .comparison-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .comparison-list li {
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      .comparison-list li i {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 50%;
+        color: var(--primary-light);
+        margin-right: 15px;
+        font-size: 0.8rem;
+      }
+
+      .data-source {
+        font-style: italic;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        opacity: 0.7;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        background: var(--bg-color);
+        padding: 8rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .swiper {
+        padding: 2rem 0 4rem;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.05) 0%,
+          rgba(139, 92, 246, 0.05) 100%
+        );
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .testimonial-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .testimonial-card:hover {
+        border-color: var(--primary-color);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+      }
+
+      .testimonial-stars {
+        color: #fbbf24;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        letter-spacing: 4px;
+      }
+
+      .testimonial-quote {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        opacity: 0.5;
+      }
+
+      .testimonial-content {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--text-color);
+        font-size: 1.1rem;
+      }
+
+      .swiper-pagination-bullet {
+        background: var(--text-muted);
+        opacity: 0.5;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--primary-color);
+        opacity: 1;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 8rem 0;
+        background: var(--bg-secondary);
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        padding: 3rem;
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        font-size: 1rem;
+        color: var(--text-color);
+        font-family: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: var(--text-muted);
+        opacity: 0.5;
+      }
+
+      .form-group textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: var(--gradient-primary);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 60px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        display: block;
+        width: 100%;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      #thankYouMessage {
+        display: none;
+        text-align: center;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--primary-light);
+        max-width: 600px;
+        padding: 4rem;
+        margin: 2rem auto;
+        border-radius: 30px;
+      }
+
+      #thankYouMessage h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      #thankYouMessage p {
+        color: var(--text-muted);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--bg-color);
+        color: var(--text-muted);
+        text-align: center;
+        padding: 4rem 0;
+        border-top: 1px solid var(--glass-border);
+      }
+
+      footer p {
+        margin-bottom: 0.5rem;
+      }
+
+      footer a {
+        color: var(--primary-light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--primary-color);
+      }
+
+      .social-links {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .social-links a {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 50%;
+        color: var(--text-color);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--gradient-primary);
+        border-color: transparent;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+      }
+
+      /* Why Choose Us Section */
+      .why-choose-us {
+        padding: 6rem 0;
+        background: var(--bg-color);
+        position: relative;
+      }
+
+      .why-choose-us::before,
+      .why-choose-us::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-color),
+          transparent
+        );
+      }
+
+      .why-choose-us::before {
+        top: 0;
+      }
+
+      .why-choose-us::after {
+        bottom: 0;
+      }
+
+      .promise-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .promise-card {
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .promise-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-primary);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .promise-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .promise-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary-color);
+        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+      }
+
+      .promise-icon-wrapper {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .promise-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1),
+          rgba(139, 92, 246, 0.1)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        transition: all 0.4s ease;
+      }
+
+      .promise-icon i {
+        font-size: 2rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .promise-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed var(--primary-color);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+        animation: rotateRing 20s linear infinite;
+      }
+
+      .promise-card:hover .promise-ring {
+        opacity: 0.6;
+        animation-duration: 10s;
+      }
+
+      .promise-card:hover .promise-icon {
+        transform: scale(1.1);
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.2),
+          rgba(139, 92, 246, 0.2)
+        );
+      }
+
+      @keyframes rotateRing {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      .promise-card h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 0.75rem;
+      }
+
+      .promise-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Tech Marquee */
+      .tech-marquee {
+        padding: 3rem 0;
+        background: var(--bg-color);
+        border-top: 1px solid var(--glass-border);
+        border-bottom: 1px solid var(--glass-border);
+        overflow: hidden;
+      }
+
+      .marquee-content {
+        display: flex;
+        animation: marquee 30s linear infinite;
+        gap: 4rem;
+      }
+
+      .marquee-content:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .tech-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        font-weight: 500;
+        white-space: nowrap;
+        transition: color 0.3s ease;
+      }
+
+      .tech-item:hover {
+        color: var(--primary-light);
+      }
+
+      .tech-item i {
+        font-size: 1.5rem;
+        color: var(--primary-light);
+      }
+
+      /* Glowing Card Effect */
+      .glow-card {
+        position: relative;
+      }
+
+      .glow-card::after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: var(--gradient-primary);
+        border-radius: inherit;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        filter: blur(15px);
+      }
+
+      .glow-card:hover::after {
+        opacity: 0.5;
+      }
+
+      /* Magnetic Button Effect */
+      .magnetic-btn {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Text Reveal Animation */
+      .reveal-text {
+        overflow: hidden;
+      }
+
+      .reveal-text span {
+        display: inline-block;
+        transform: translateY(100%);
+        animation: revealText 0.8s ease forwards;
+      }
+
+      @keyframes revealText {
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      /* Floating Badge Animation */
+      .float-badge {
+        animation: floatBadge 3s ease-in-out infinite;
+      }
+
+      @keyframes floatBadge {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Shimmer Effect */
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shimmer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Breathing Glow */
+      .breathing-glow {
+        animation: breathingGlow 4s ease-in-out infinite;
+      }
+
+      @keyframes breathingGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+        }
+      }
+
+      /* Gradient Border Animation */
+      .gradient-border {
+        position: relative;
+        background: var(--bg-secondary);
+        border-radius: 24px;
+      }
+
+      .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color),
+          var(--accent-secondary),
+          var(--primary-color)
+        );
+        background-size: 300% 300%;
+        animation: gradientRotate 4s linear infinite;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .gradient-border:hover::before {
+        opacity: 1;
+      }
+
+      @keyframes gradientRotate {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
         .comparison-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            gap: 2rem;
+          grid-template-columns: 1fr;
+          gap: 3rem;
         }
-        
+
         .comparison-image {
-            flex: 1;
-            max-width: 400px;
-            background-color: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .comparison-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 15px;
-        }
-        
-        .comparison-content {
-            flex: 1;
-        }
-        
-        .comparison-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .comparison-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .comparison-list li i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-        }
-        
-        .data-source {
-            font-style: italic;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #666;
+          max-width: 400px;
+          margin: 0 auto;
         }
 
-        @media (max-width: 768px) {
-            .comparison-container {
-                flex-direction: column;
-            }
-            
-            .comparison-image {
-                max-width: 100%;
-                margin-bottom: 2rem;
-            }
+        .promise-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 70%;
+          height: 100vh;
+          background: var(--bg-secondary);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          transition: right 0.3s ease;
+          border-left: 1px solid var(--glass-border);
         }
 
-	#thankYouMessage {
-	    display: none;
-	    text-align: center;
-	    background-color:#ccdfe0;
-	    color:  #007682;
-	    max-width: 600px;
-	    padding: 50px;
-	    margin: 20px auto;
-	    border-radius: 30px;
-	}
+        .nav-links.active {
+          right: 0;
+        }
 
+        .mobile-menu-btn {
+          display: flex;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 8vw, 3.5rem);
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .feature-grid,
+        .app-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-form {
+          padding: 2rem;
+        }
+
+        .promise-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .promise-card {
+          padding: 1.5rem 1rem;
+        }
+
+        .promise-icon-wrapper {
+          width: 60px;
+          height: 60px;
+        }
+
+        .promise-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .promise-icon i {
+          font-size: 1.5rem;
+        }
+
+        .promise-card h3 {
+          font-size: 1rem;
+        }
+
+        .promise-card p {
+          font-size: 0.85rem;
+        }
+
+        .tech-marquee {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .promise-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Scroll Progress Bar */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: var(--gradient-primary);
+        z-index: 10000;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+      }
+
+      /* Preloader */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        z-index: 99999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      .preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .preloader-logo {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      .preloader-spinner {
+        width: 50px;
+        height: 50px;
+        position: relative;
+      }
+
+      .preloader-spinner::before,
+      .preloader-spinner::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .preloader-spinner::before {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        animation: spinPulse 2s ease-in-out infinite;
+      }
+
+      .preloader-spinner::after {
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+        background: var(--bg-color);
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spinPulse {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        50% {
+          transform: rotate(180deg) scale(1.1);
+        }
+        100% {
+          transform: rotate(360deg) scale(1);
+        }
+      }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-logo">Madingley Tech.</div>
+      <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Mesh Gradient Background -->
+    <div class="mesh-gradient"></div>
+
+    <!-- Animated Grain Texture -->
+    <div class="grain"></div>
+
+    <!-- Gradient Orbs Background -->
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
     <header id="header">
-        <div class="container">
-            <nav>
-                <a href="#" class="logo"><i class="fas fa-mobile-alt logo-icon"></i>Mad. Tech.</a>
-                <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#features">Features</a>
-                    <a href="#apps">Our Apps</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">
+            <i class="fas fa-mobile-alt logo-icon"></i>
+            Madingley Tech.
+          </a>
+          <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#apps">Our Apps</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content container">
-                <h1>Madingley Technologies</h1>
-                <p>Empowering your digital lifestyle with innovative mobile apps</p>
-                <a href="#contact" class="cta-button">Get In Touch</a>
-            </div>
-        </section>
+      <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-grid"></div>
 
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">Why Choose Our Apps</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
-                        <h3>Price Comparison</h3>
-                        <p>Easily compare fruit and vegetable prices between retailers and producers in Cyprus.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Real-time Data</h3>
-                        <p>Access up-to-date pricing information directly from the Cyprus Ministry of Agriculture.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>User-Friendly Interface</h3>
-                        <p>Intuitive design makes it easy to find the information you need quickly and efficiently.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="apps" class="apps">
-            <div class="container">
-                <h2 class="section-title">Our Apps</h2>
-                <div class="app-grid">
-		  <a href="https://smartkofini.madingleytechnologies.com" class="app-item">
-                        <img src="about-image.png" alt="smartKofini App" class="app-image">
-                        <div class="app-content">
-                            <h3>smartKofini</h3>
-                            <p>Compare fruit and vegetable prices in Cyprus between retailers and producers. Make informed decisions and save money on your grocery shopping.</p>
-                        </div>
-		    </a>
-                    <div class="app-item">
-                        <img src="smartKalathi-cover.jpg" alt="smartKalathi App" class="app-image">
-                        <div class="app-content">
-                            <h3>smartKalathi (Coming Soon)</h3>
-                            <p>Our upcoming app designed to enhance your shopping experience. Stay tuned for more details!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="price-comparison" class="price-comparison">
-        <div class="container">
-            <h2 class="section-title">smartKofini: Your Price Comparison Tool</h2>
-            <div class="comparison-container">
-                <div class="comparison-image">
-                    <img src="smartKofini-home-1.png" alt="smartKofini app interface">
-                </div>
-                <div class="comparison-content">
-                    <h3>Make Informed Decisions</h3>
-                    <ul class="comparison-list">
-                        <li><i class="fas fa-check"></i> Compare retail and producer prices</li>
-                        <li><i class="fas fa-check"></i> View price trends over time</li>
-                        <li><i class="fas fa-check"></i> Find the best deals on fresh produce</li>
-                        <li><i class="fas fa-check"></i> Support local farmers</li>
-                        <li><i class="fas fa-check"></i> Save money on your grocery shopping</li>
-                    </ul>
-                    <p class="data-source">Data provided by the Cyprus Ministry of Agriculture</p>
-                </div>
-            </div>
+        <div class="hero-content container">
+          <div
+            class="hero-badge float-badge"
+            data-aos="fade-down"
+            data-aos-delay="100"
+          >
+            <i class="fas fa-sparkles"></i>
+            Innovating Mobile Experiences
+          </div>
+          <h1 data-aos="fade-up" data-aos-delay="200">
+            <span class="gradient-text">Madingley</span><br />
+            <span id="typed-text"></span>
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="400">
+            Empowering your digital lifestyle with innovative mobile apps
+            designed to simplify, save, and supercharge your everyday decisions.
+          </p>
+          <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+            <a href="#apps" class="cta-button magnetic-btn">
+              <i class="fas fa-rocket"></i>
+              Explore Our Apps
+            </a>
+            <a href="#contact" class="cta-button-secondary magnetic-btn">
+              <i class="fas fa-envelope"></i>
+              Get In Touch
+            </a>
+          </div>
         </div>
-    </section>
+      </section>
 
-        <!-- Testimonials section -->
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <h2 class="section-title">What Our Users Say</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial-item active">
-                        <p class="testimonial-content">"smartKofini has completely changed how I shop for fruits and vegetables. I'm saving money and supporting local producers!"</p>
-                        <p class="testimonial-author">- Savvas C., Pafos</p>
-                    </div>
-                    <div class="testimonial-item">
-                        <p class="testimonial-content">"I love how easy it is to compare prices with smartKofini. It's helped me make smarter choices when grocery shopping."</p>
-                        <p class="testimonial-author">- Nafsika T., Limassol</p>
-                    </div>
-                </div>
-                <div class="slider-nav">
-                    <button class="active"></button>
-                    <button></button>
-                    <button></button>
-                </div>
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge" data-aos="fade-up">
+              <i class="fas fa-star"></i>
+              Why Choose Us
             </div>
-        </section>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+              Powerful Features
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+              Our apps are built with cutting-edge technology to deliver the
+              best user experience
+            </p>
+          </div>
+          <div class="feature-grid">
+            <div
+              class="feature-item gradient-border tilt-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="feature-icon breathing-glow">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3>Price Comparison</h3>
+              <p>
+                Compare prices across supermarkets, retailers and local
+                producers in Cyprus. Make smarter shopping decisions every time.
+              </p>
+            </div>
+            <div
+              class="feature-item gradient-border tilt-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="feature-icon breathing-glow">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Real-time Data</h3>
+              <p>
+                Access up-to-date pricing from official Cyprus government
+                sources. Track price history and trends over time.
+              </p>
+            </div>
+            <div
+              class="feature-item gradient-border tilt-card"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="feature-icon breathing-glow">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>User-Friendly Design</h3>
+              <p>
+                Intuitive interfaces with barcode scanning, smart shopping
+                carts, and bilingual support in Greek and English.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="contact" class="contact">
-	  
-	  <script type="text/javascript">
-        var submitted=false;
-		function disableSubmit() {
-			var submitButton = document.getElementById('submitButton');
-			submitButton.disabled = true;
-			submitButton.innerText = '...';
-			submitted = true;
-		}
-        
-        let formLoadTime;
+      <!-- Why Choose Us Section -->
+      <section class="why-choose-us">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge" data-aos="fade-up">
+              <i class="fas fa-heart"></i>
+              Our Promise
+            </div>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+              Why Choose Us
+            </h2>
+          </div>
+          <div class="promise-grid">
+            <div class="promise-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="promise-icon-wrapper">
+                <div class="promise-icon">
+                  <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div class="promise-ring"></div>
+              </div>
+              <h3>Built for Cyprus</h3>
+              <p>
+                Apps designed specifically for the Cypriot market, with local
+                data and regional insights that matter to you.
+              </p>
+            </div>
+            <div class="promise-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="promise-icon-wrapper">
+                <div class="promise-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <div class="promise-ring"></div>
+              </div>
+              <h3>Official Government Data</h3>
+              <p>
+                Powered by official Cyprus government sources — Ministry of
+                Agriculture and Ministry of Energy, Commerce and Industry.
+              </p>
+            </div>
+            <div class="promise-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="promise-icon-wrapper">
+                <div class="promise-icon">
+                  <i class="fas fa-gift"></i>
+                </div>
+                <div class="promise-ring"></div>
+              </div>
+              <h3>Free to Use</h3>
+              <p>
+                No subscriptions and no hidden fees. Download our apps and start
+                saving money immediately.
+              </p>
+            </div>
+            <div class="promise-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="promise-icon-wrapper">
+                <div class="promise-icon">
+                  <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="promise-ring"></div>
+              </div>
+              <h3>Real Savings</h3>
+              <p>
+                Compare prices across supermarkets and producers. Make informed
+                decisions and keep more money in your pocket.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        // Record the time when the page loads
-        window.onload = function () {
+      <!-- Tech Marquee -->
+      <section class="tech-marquee">
+        <div class="marquee-content">
+          <div class="tech-item">
+            <i class="fas fa-feather-alt"></i> Flutter
+          </div>
+          <div class="tech-item"><i class="fab fa-apple"></i> iOS</div>
+          <div class="tech-item"><i class="fab fa-android"></i> Android</div>
+          <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="tech-item">
+            <i class="fas fa-database"></i> Real-time Data
+          </div>
+          <div class="tech-item">
+            <i class="fas fa-cloud"></i> Cloud Infrastructure
+          </div>
+          <div class="tech-item"><i class="fas fa-shield-alt"></i> Secure</div>
+          <div class="tech-item"><i class="fas fa-bolt"></i> Fast</div>
+          <div class="tech-item">
+            <i class="fas fa-feather-alt"></i> Flutter
+          </div>
+          <div class="tech-item"><i class="fab fa-apple"></i> iOS</div>
+          <div class="tech-item"><i class="fab fa-android"></i> Android</div>
+          <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="tech-item">
+            <i class="fas fa-database"></i> Real-time Data
+          </div>
+          <div class="tech-item">
+            <i class="fas fa-cloud"></i> Cloud Infrastructure
+          </div>
+          <div class="tech-item"><i class="fas fa-shield-alt"></i> Secure</div>
+          <div class="tech-item"><i class="fas fa-bolt"></i> Fast</div>
+        </div>
+      </section>
+
+      <section id="apps" class="apps">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge" data-aos="fade-up">
+              <i class="fas fa-mobile-alt"></i>
+              Our Products
+            </div>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+              Our Apps
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+              Discover our suite of innovative mobile applications
+            </p>
+          </div>
+          <div class="app-grid">
+            <a
+              href="https://smartkofini.madingleytechnologies.com"
+              class="app-item tilt-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="app-image-wrapper">
+                <img
+                  src="about-image.png"
+                  alt="smartKofini App"
+                  class="app-image"
+                />
+              </div>
+              <div class="app-content">
+                <span class="app-tag shimmer">Available Now</span>
+                <h3>smartKofini</h3>
+                <p>
+                  Compare fruit and vegetable prices in Cyprus between retailers
+                  and producers. Make informed decisions and save money on your
+                  grocery shopping.
+                </p>
+              </div>
+            </a>
+            <a
+              href="https://smartkalathi.madingleytechnologies.com"
+              class="app-item tilt-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="app-image-wrapper">
+                <img
+                  src="smartKalathi-cover.jpg"
+                  alt="smartKalathi App"
+                  class="app-image"
+                />
+              </div>
+              <div class="app-content">
+                <span class="app-tag shimmer">Coming Soon</span>
+                <h3>smartKalathi</h3>
+                <p>
+                  Your smart shopping companion designed to enhance your
+                  shopping experience. Compare prices and save money!
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="price-comparison" class="price-comparison">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge" data-aos="fade-up">
+              <i class="fas fa-shopping-basket"></i>
+              Featured App
+            </div>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+              smartKofini: Your Price Tool
+            </h2>
+          </div>
+          <div class="comparison-container">
+            <div
+              class="comparison-image"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <img
+                src="smartKofini-home-1.png"
+                alt="smartKofini app interface"
+              />
+            </div>
+            <div
+              class="comparison-content"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <h3>Make Informed Decisions</h3>
+              <ul class="comparison-list">
+                <li>
+                  <i class="fas fa-check"></i> Compare retail and producer
+                  prices
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> View price trends over time
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Find the best deals on fresh
+                  produce
+                </li>
+                <li><i class="fas fa-check"></i> Support local farmers</li>
+                <li>
+                  <i class="fas fa-check"></i> Save money on your grocery
+                  shopping
+                </li>
+              </ul>
+              <p class="data-source">
+                Data provided by the Cyprus Ministry of Agriculture
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge" data-aos="fade-up">
+              <i class="fas fa-quote-left"></i>
+              Testimonials
+            </div>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+              What Our Users Say
+            </h2>
+          </div>
+          <div
+            class="swiper testimonial-swiper"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                  <p class="testimonial-content">
+                    "smartKofini has completely changed how I shop for fruits
+                    and vegetables. I'm saving money and supporting local
+                    producers!"
+                  </p>
+                  <p class="testimonial-author">— Savvas C., Pafos</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                  <p class="testimonial-content">
+                    "I love how easy it is to compare prices with smartKofini.
+                    It's helped me make smarter choices when grocery shopping."
+                  </p>
+                  <p class="testimonial-author">— Nafsika T., Limassol</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="testimonial-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                  </div>
+                  <p class="testimonial-content">
+                    "Finally an app that helps me find the best deals on fresh
+                    produce. The real-time data is incredibly helpful!"
+                  </p>
+                  <p class="testimonial-author">— Maria K., Nicosia</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <script type="text/javascript">
+          var submitted = false;
+          function disableSubmit() {
+            var submitButton = document.getElementById("submitButton");
+            submitButton.disabled = true;
+            submitButton.innerText = "Sending...";
+            submitted = true;
+          }
+
+          let formLoadTime;
+
+          window.addEventListener("DOMContentLoaded", function () {
             formLoadTime = new Date().getTime();
-        };
-        
-        function validateForm(event) {
+          });
+
+          function validateForm(event) {
             let submitTime = new Date().getTime();
             let timeDifference = submitTime - formLoadTime;
-            
-            // Set a minimum time threshold (e.g., 10 seconds)
+
             if (timeDifference < 10000) {
-                alert("Form submitted too quickly! Please take your time.");
-                event.preventDefault(); // Prevent form submission
-                return false;
+              alert("Please take your time filling out the form.");
+              event.preventDefault();
+              return false;
             }
             return true;
-        }
+          }
 
-        function handleFormSubmit(event) {
+          function handleFormSubmit(event) {
             if (!validateForm(event)) {
-                return false; // Prevent submission if validation fails
+              return false;
             }
-            disableSubmit(); // Call disableSubmit() if validation passes
-        return true;
-        }
-	  </script>
+            disableSubmit();
+            return true;
+          }
+        </script>
 
-	  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"  onload="if(submitted) {document.getElementById('contact').style.display='none';  document.getElementById('thankYouMessage').style.display='block';}"></iframe>
-	  
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <form class="contact-form" id="contactForm"  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8_fzCuPd0F9gn4bk-DIPrkmcd4aQjJIFRq0zTweqGvyePSQ/formResponse"
-		      method="POST" target="hidden_iframe"  onsubmit="return handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="entry.1546443415"  pattern="[a-zA-Z\u0370-\u03FF\u1F00-\u1FFF ]+" oninvalid="this.setCustomValidity('Enter a name containing only letters')"  onchange="try{setCustomValidity('')}catch(e){}"  oninput="setCustomValidity(' ')"  required>
-                    </div>
-                    <div class="form-group" style="display:none;">
-                      <label for="address">Address</label>
-                      <input type="text" id="address" name="entry.1181150898" value="Madingley" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="entry.134040132" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"  oninvalid="this.setCustomValidity('Enter a valid email address')"  onchange="try{setCustomValidity('')}catch(e){}"  oninput="setCustomValidity(' ')" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="entry.188106255" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="check">What number is before 43?</label>
-                        <input type="text" id="check" name="entry.1765795431" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn" id="submitButton">Send Message</button>
-                </form>		
+        <iframe
+          name="hidden_iframe"
+          id="hidden_iframe"
+          style="display: none"
+          onload="if(submitted) {document.getElementById('contact').style.display='none'; document.getElementById('thankYouMessage').style.display='block';}"
+        ></iframe>
+
+        <div class="container">
+          <div class="section-header">
+            <div class="section-badge" data-aos="fade-up">
+              <i class="fas fa-envelope"></i>
+              Contact Us
             </div>
-        </section>
-	<div class="container" id="thankYouMessage">
-	  <h3>Thank you!</h3>
-	  <p>Your message has been sent.</p>
-	</div>
-	
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+              Get in Touch
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+              Have a question or want to collaborate? We'd love to hear from
+              you!
+            </p>
+          </div>
+          <form
+            class="contact-form"
+            id="contactForm"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd8_fzCuPd0F9gn4bk-DIPrkmcd4aQjJIFRq0zTweqGvyePSQ/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            onsubmit="return handleFormSubmit(event)"
+          >
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="entry.1546443415"
+                placeholder="Your name"
+                pattern="[a-zA-Z\u0370-\u03FF\u1F00-\u1FFF ]+"
+                oninvalid="this.setCustomValidity('Enter a name containing only letters')"
+                onchange="try{setCustomValidity('')}catch(e){}"
+                oninput="setCustomValidity(' ')"
+                required
+              />
+            </div>
+            <div class="form-group" style="display: none">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="entry.1181150898"
+                value="Madingley"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="entry.134040132"
+                placeholder="your@email.com"
+                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                oninvalid="this.setCustomValidity('Enter a valid email address')"
+                onchange="try{setCustomValidity('')}catch(e){}"
+                oninput="setCustomValidity(' ')"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="entry.188106255"
+                placeholder="Your message..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="check">What number comes before 43?</label>
+              <input
+                type="text"
+                id="check"
+                name="entry.1765795431"
+                placeholder="Answer"
+                required
+              />
+            </div>
+            <button type="submit" class="submit-btn" id="submitButton">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <div class="container" id="thankYouMessage">
+        <h3>Thank you!</h3>
+        <p>Your message has been sent. We'll get back to you soon!</p>
+      </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Madingley Technologies. All rights reserved.</p>
-            <p>Proud developers of <a href="https://smartkofini.madingleytechnologies.com">smartKofini</a> and smartKalathi (Coming Soon).</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/people/Madingley-Technologies/61567998862127/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://x.com/MadingleyTech" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/madingley.technologies/profilecard/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
+      <div class="container">
+        <p>&copy; 2024 Madingley Technologies. All rights reserved.</p>
+        <p>
+          Proud developers of
+          <a href="https://smartkofini.madingleytechnologies.com"
+            >smartKofini</a
+          >
+          and
+          <a href="https://smartkalathi.madingleytechnologies.com"
+            >smartKalathi</a
+          >.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/people/Madingley-Technologies/61567998862127/"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://x.com/MadingleyTech"
+            aria-label="Twitter"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/madingley.technologies/profilecard/"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
+      </div>
     </footer>
 
+    <!-- Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                header.style.backgroundColor = 'transparent';
-                header.style.boxShadow = 'none';
-            }
-        });
-
-        // Testimonial slider
-        const testimonials = document.querySelectorAll('.testimonial-item');
-        const navButtons = document.querySelectorAll('.slider-nav button');
-        let currentTestimonial = 0;
-
-        function showTestimonial(index) {
-            testimonials[currentTestimonial].classList.remove('active');
-            navButtons[currentTestimonial].classList.remove('active');
-            testimonials[index].classList.add('active');
-            navButtons[index].classList.add('active');
-            currentTestimonial = index;
+      // Hide preloader - runs immediately when DOM is ready and also as fallback
+      function hidePreloader() {
+        const preloader = document.querySelector(".preloader");
+        if (preloader) {
+          preloader.classList.add("hidden");
         }
+      }
 
-        navButtons.forEach((button, index) => {
-            button.addEventListener('click', () => showTestimonial(index));
+      // Hide preloader on DOMContentLoaded (faster)
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(hidePreloader, 300);
+      });
+
+      // Fallback: hide preloader on window load
+      window.addEventListener("load", () => {
+        setTimeout(hidePreloader, 500);
+      });
+
+      // Ultimate fallback: hide after 3 seconds no matter what
+      setTimeout(hidePreloader, 3000);
+
+      // Initialize AOS (with error handling)
+      try {
+        if (typeof AOS !== "undefined") {
+          AOS.init({
+            duration: 800,
+            easing: "ease-out-cubic",
+            once: true,
+            offset: 50,
+          });
+        }
+      } catch (e) {
+        console.log("AOS init error:", e);
+      }
+
+      // Initialize Swiper (with error handling)
+      try {
+        if (typeof Swiper !== "undefined") {
+          const testimonialSwiper = new Swiper(".testimonial-swiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            },
+          });
+        }
+      } catch (e) {
+        console.log("Swiper init error:", e);
+      }
+
+      // Initialize Particles.js (with error handling)
+      try {
+        if (
+          typeof particlesJS !== "undefined" &&
+          document.getElementById("particles-js")
+        ) {
+          particlesJS("particles-js", {
+            particles: {
+              number: { value: 80, density: { enable: true, value_area: 800 } },
+              color: { value: "#6366f1" },
+              shape: { type: "circle" },
+              opacity: { value: 0.3, random: true },
+              size: { value: 3, random: true },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#6366f1",
+                opacity: 0.1,
+                width: 1,
+              },
+              move: {
+                enable: true,
+                speed: 1,
+                direction: "none",
+                random: true,
+                out_mode: "out",
+              },
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: { enable: true, mode: "grab" },
+                onclick: { enable: true, mode: "push" },
+                resize: true,
+              },
+              modes: {
+                grab: { distance: 140, line_linked: { opacity: 0.3 } },
+                push: { particles_nb: 4 },
+              },
+            },
+            retina_detect: true,
+          });
+        }
+      } catch (e) {
+        console.log("Particles init error:", e);
+      }
+
+      // Initialize Typed.js (with error handling)
+      try {
+        if (
+          typeof Typed !== "undefined" &&
+          document.getElementById("typed-text")
+        ) {
+          new Typed("#typed-text", {
+            strings: ["Technologies", "Innovation", "Excellence", "Solutions"],
+            typeSpeed: 80,
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true,
+            cursorChar: "_",
+          });
+        }
+      } catch (e) {
+        console.log("Typed init error:", e);
+      }
+
+      // Scroll Progress Bar
+      window.addEventListener("scroll", () => {
+        const scrollProgress = document.getElementById("scrollProgress");
+        if (scrollProgress) {
+          const scrollTop = document.documentElement.scrollTop;
+          const scrollHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const progress = (scrollTop / scrollHeight) * 100;
+          scrollProgress.style.width = progress + "%";
+        }
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (header) {
+          if (window.scrollY > 100) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenuBtn.classList.toggle("active");
+          navLinks.classList.toggle("active");
         });
 
-        setInterval(() => {
-            let nextTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(nextTestimonial);
-        }, 5000);
-
+        // Close mobile menu when clicking a link
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenuBtn.classList.remove("active");
+            navLinks.classList.remove("active");
+          });
         });
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // GSAP Animations (with error handling)
+      try {
+        if (
+          typeof gsap !== "undefined" &&
+          typeof ScrollTrigger !== "undefined"
+        ) {
+          gsap.registerPlugin(ScrollTrigger);
+
+          // Animate feature items on scroll
+          gsap.utils.toArray(".feature-item").forEach((item, i) => {
+            gsap.from(item, {
+              scrollTrigger: {
+                trigger: item,
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+              },
+              y: 50,
+              opacity: 0,
+              duration: 0.8,
+              delay: i * 0.1,
+            });
+          });
+
+          // Parallax effect for orbs
+          gsap.to(".orb-1", {
+            scrollTrigger: {
+              trigger: "body",
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+            y: 200,
+          });
+
+          gsap.to(".orb-2", {
+            scrollTrigger: {
+              trigger: "body",
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+            y: -150,
+          });
+        }
+      } catch (e) {
+        console.log("GSAP init error:", e);
+      }
+
+      // Initialize Vanilla Tilt for 3D card effects
+      try {
+        if (typeof VanillaTilt !== "undefined") {
+          VanillaTilt.init(
+            document.querySelectorAll(
+              ".feature-item, .app-item, .testimonial-card, .promise-card"
+            ),
+            {
+              max: 8,
+              speed: 400,
+              glare: true,
+              "max-glare": 0.2,
+              scale: 1.02,
+            }
+          );
+        }
+      } catch (e) {
+        console.log("VanillaTilt init error:", e);
+      }
+
+      // Text scramble effect on hover for section titles
+      class TextScramble {
+        constructor(el) {
+          this.el = el;
+          this.chars = "!<>-_\\/[]{}—=+*^?#________";
+          this.update = this.update.bind(this);
+        }
+        setText(newText) {
+          const oldText = this.el.innerText;
+          const length = Math.max(oldText.length, newText.length);
+          const promise = new Promise((resolve) => (this.resolve = resolve));
+          this.queue = [];
+          for (let i = 0; i < length; i++) {
+            const from = oldText[i] || "";
+            const to = newText[i] || "";
+            const start = Math.floor(Math.random() * 20);
+            const end = start + Math.floor(Math.random() * 20);
+            this.queue.push({ from, to, start, end });
+          }
+          cancelAnimationFrame(this.frameRequest);
+          this.frame = 0;
+          this.update();
+          return promise;
+        }
+        update() {
+          let output = "";
+          let complete = 0;
+          for (let i = 0, n = this.queue.length; i < n; i++) {
+            let { from, to, start, end, char } = this.queue[i];
+            if (this.frame >= end) {
+              complete++;
+              output += to;
+            } else if (this.frame >= start) {
+              if (!char || Math.random() < 0.28) {
+                char =
+                  this.chars[Math.floor(Math.random() * this.chars.length)];
+                this.queue[i].char = char;
+              }
+              output += `<span style="color: var(--primary-color)">${char}</span>`;
+            } else {
+              output += from;
+            }
+          }
+          this.el.innerHTML = output;
+          if (complete === this.queue.length) {
+            this.resolve();
+          } else {
+            this.frameRequest = requestAnimationFrame(this.update);
+            this.frame++;
+          }
+        }
+      }
+
+      // Parallax effect on mouse move for hero section
+      const hero = document.querySelector(".hero");
+      if (hero) {
+        hero.addEventListener("mousemove", (e) => {
+          const { clientX, clientY } = e;
+          const { innerWidth, innerHeight } = window;
+
+          const xPos = (clientX / innerWidth - 0.5) * 20;
+          const yPos = (clientY / innerHeight - 0.5) * 20;
+
+          const heroContent = document.querySelector(".hero-content");
+          if (heroContent) {
+            heroContent.style.transform = `translate(${xPos}px, ${yPos}px)`;
+          }
+        });
+
+        hero.addEventListener("mouseleave", () => {
+          const heroContent = document.querySelector(".hero-content");
+          if (heroContent) {
+            heroContent.style.transform = "";
+          }
+        });
+      }
+
+      // Add glow effect to cards on hover
+      document.querySelectorAll(".feature-item, .app-item").forEach((card) => {
+        card.addEventListener("mousemove", function (e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          this.style.setProperty("--mouse-x", `${x}px`);
+          this.style.setProperty("--mouse-y", `${y}px`);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
